@@ -8,6 +8,33 @@ Amos is about disconnecting from being manipulated and giving you the power to c
 
 Currently, Amos requires some technical know-how. The cluster of microservices used for pulling data can be hosted on [Vercel](https://vercel.com), while [Deck](https://github.com/takeamos/deck) and any recommenders that you use will need to be ran like a traditional server.
 
+### How to launch
+
+```bash
+git clone git@github.com:takeamos/twitter.git
+cd twitter
+# You will need to create an account on Vercel for this step
+vercel login
+# Deploy to Vercel
+vercel --prod
+# Repeat for any other services you need
+
+# Clone down service to pull data
+cd ..
+git clone git@github.com:takeamos/tape-deck.git
+cd tape-deck
+npm install
+npm start
+
+# Now to spin up recommenders
+cd ..
+git clone git@github.com:takeamos/date-recommender.git
+cd date-recommender
+npm install
+npm start
+```
+
+---
 ### Data Services
 
 Current (the links are to the repos):
